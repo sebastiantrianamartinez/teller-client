@@ -1,0 +1,43 @@
+{
+  "name": "news-client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@editorjs/embed": "^2.7.1",
+    "@editorjs/header": "^2.8.1",
+    "@editorjs/image": "^2.9.0",
+    "@editorjs/link": "^2.6.2",
+    "@editorjs/list": "^1.9.0",
+    "@editorjs/quote": "^2.6.0",
+    "@editorjs/simple-image": "^1.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@editorjs/editorjs": "^2.29.1",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "editorjs-drag-drop": "^1.1.14",
+    "editorjs-inline-font-family-tool": "^1.0.4",
+    "editorjs-inline-font-size-tool": "^1.0.1",
+    "editorjs-inline-image": "^2.1.1",
+    "editorjs-inline-tool": "^0.4.0",
+    "editorjs-simple-image-updated": "^1.3.8",
+    "editorjs-table": "^1.4.10",
+    "editorjs-text-color-plugin": "^2.0.4",
+    "editorjs-undo": "^2.0.28",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "vite": "^5.2.0"
+  }
+}
