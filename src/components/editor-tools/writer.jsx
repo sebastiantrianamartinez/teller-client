@@ -11,6 +11,7 @@ import FontSize from "editorjs-inline-font-size-tool";
 import FontFamily from "editorjs-inline-font-family-tool";
 import Quote from '@editorjs/quote';
 import InlineImage from 'editorjs-inline-image';
+import '../../index.css';
 
 function Writer() {
     const editorRef = useRef(null);

@@ -191,11 +191,18 @@
     outline: none;
 }
 
-
 .iframe-container {
-    width: 800px;
-    height: 400px;
     overflow: hidden !important; 
+    padding: 0;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+.iframe-container > iframe{
+    padding: 0;
+    width: 800px;
+    overflow: hidden !important; 
+    border: none !important;
+    background-color: none !important;
 }
 .iframe-container::-webkit-scrollbar {
     display: none !important;
