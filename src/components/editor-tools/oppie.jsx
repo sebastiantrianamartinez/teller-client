@@ -18,10 +18,12 @@ class Image {
         // Insert CSS for iframe styles
         const style = document.createElement('style');
         style.innerHTML = `
+        @media (max-width:800px){
             .simple-image iframe {
                 height: 400px !important;
                 width:350px !important;
             }
+        }
         `;
         document.head.appendChild(style);
     }
