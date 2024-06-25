@@ -1,0 +1,11 @@
+.simple-image .iframe-container iframe {
+    width: 800px;
+    height: 400px;
+}
+
+@media (max-width: 300px) {
+    .simple-image .iframe-container iframe {
+        width: 250px;
+        height: 800px;
+    }
+}

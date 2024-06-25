@@ -14,6 +14,16 @@ class Image {
                 this._createImage(this.selectedImageUrl);
             }
         });
+
+        // Insert CSS for iframe styles
+        const style = document.createElement('style');
+        style.innerHTML = `
+            .simple-image iframe {
+                height: 400px !important;
+                width:350px !important;
+            }
+        `;
+        document.head.appendChild(style);
     }
 
     static get toolbox() {
@@ -41,6 +51,19 @@ class Image {
         iframeContainer.appendChild(frame);
 
         this.wrapper.appendChild(iframeContainer);
+
+        // Use ResizeObserver to monitor changes in the wrapper size
+        const resizeObserver = new ResizeObserver(entries => {
+            for (let entry of entries) {
+                if (entry.contentRect.width < 300) {
+                    frame.width = "350px";
+                } else {
+                    frame.width = "800px";
+                }
+            }
+        });
+
+        resizeObserver.observe(this.wrapper);
 
         return this.wrapper;
     }
