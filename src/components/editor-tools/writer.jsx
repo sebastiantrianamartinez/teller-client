@@ -11,15 +11,27 @@ import FontSize from "editorjs-inline-font-size-tool";
 import FontFamily from "editorjs-inline-font-family-tool";
 import Quote from '@editorjs/quote';
 import InlineImage from 'editorjs-inline-image';
-import '../../index.css';
+
 
 function Writer() {
     const editorRef = useRef(null);
     const [isReady, setIsReady] = useState(false);
     const [tweetUrl, setTweetUrl] = useState("");
     const [modalVisible, setModalVisible] = useState(false);
+    const [images, setImages] = useState([]);
 
+    const updateImageSrc = () => {
+        images.forEach((image) => {
+            const imageDOM = document.getElementById(image.id);
+            if(imageDOM){
+                imageDOM.src = image.url;
+            }
+        });
+    };
     
+    useEffect(() => {
+        updateImageSrc();
+    }, [images]);
 
     const openModal = () => {
         console.log("Abriendo modal");
@@ -103,14 +115,30 @@ function Writer() {
             onReady: () => {
                 setIsReady(true);
             },
+            
         });
+        
+        const editor = editorInstance;
+
 
         window.addEventListener("message", handleMessage);
+
+        
+        if (isReady) {
+            editor.on('onChange', (event) => {
+              console.log('El contenido del editor ha cambiado:', event.data);
+              // Your code to handle content change here
+            });
+        }
 
         return () => {
             window.removeEventListener("message", handleMessage);
         };
-    }, []);
+        
+        }, []);
+      
+
+
 
     return (
         <div>
